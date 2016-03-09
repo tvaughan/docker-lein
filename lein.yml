@@ -1,0 +1,13 @@
+version: "2"
+services:
+  lein:
+    image: tvaughan/lein:2.6.1
+    command: lein
+    ports:
+    - "5309:5309"
+    volumes_from:
+    - lein-volume
+    volumes:
+    - $PWD:/mnt/workdir
+  lein-volume:
+    image: tvaughan/lein-volume:1
